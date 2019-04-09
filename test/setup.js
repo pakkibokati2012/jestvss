@@ -13,9 +13,3 @@ RNNativeModules.RNCAsyncStorage = {
   multiRemove: jest.fn(),
   multiMerge: jest.fn()
 };
-
-RNNativeModules.UIManager = RNNativeModules.UIManager || {};
-RNNativeModules.UIManager.RCTView = RNNativeModules.UIManager.RCTView || {};
-RNNativeModules.RNGestureHandlerModule = RNNativeModules.RNGestureHandlerModule || {
-  State: { BEGAN: 'BEGAN', FAILED: 'FAILED', ACTIVE: 'ACTIVE', END: 'END' }
-};
