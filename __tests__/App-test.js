@@ -5,6 +5,8 @@
 import 'react-native';
 import React from 'react';
 import App from '../src';
+import { mount, render } from 'enzyme';
+
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 it('renders correctly', () => {
@@ -34,4 +36,9 @@ jest.mock('react-navigation', () => {
       navigate: jest.fn().mockImplementation(x => x)
     }
   };
+});
+
+it('can add a Todo with Enzyme', () => {
+  console.log('using enzyme');
+  const wrapper = render(<App />);
 });

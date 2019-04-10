@@ -1,4 +1,8 @@
 import { NativeModules as RNNativeModules } from 'react-native';
+import 'react-native';
+import 'jest-enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Enzyme from 'enzyme';
 
 RNNativeModules.RNCAsyncStorage = {
   getItem: jest.fn(),
@@ -13,3 +17,5 @@ RNNativeModules.RNCAsyncStorage = {
   multiRemove: jest.fn(),
   multiMerge: jest.fn()
 };
+
+Enzyme.configure({ adapter: new Adapter() });
