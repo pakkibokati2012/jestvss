@@ -5,12 +5,18 @@
 import 'react-native';
 import React from 'react';
 import App from '../src';
-import { mount, render } from 'enzyme';
+import { mount, render, shallow } from 'enzyme';
+import AppNavigator from '../src/navigation/AppNavigator';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 it('renders correctly', () => {
   renderer.create(<App />);
+});
+
+it('loads app navigator', () => {
+  const wrapped = shallow(<App />);
+  expect(wrapped.find(AppNavigator).length).toEqual(1);
 });
 
 jest.mock('react-navigation', () => {
