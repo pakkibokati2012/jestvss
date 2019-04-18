@@ -23,6 +23,7 @@ export default class AuthLoadingScreen extends React.Component {
 
   // Fetch the token from storage then navigate to our appropriate place
   _bootstrapAsync = async () => {
+    console.log('inside bootstrap', this.props);
     const userToken = await AsyncStorage.getItem('@vss_consent_token');
     const {
       navigation: { navigate }
@@ -30,7 +31,6 @@ export default class AuthLoadingScreen extends React.Component {
 
     // This will switch to the App screen or Auth screen and this loading
     // screen will be unmounted and thrown away.
-
     navigate(userToken ? 'Main' : 'Auth');
     // navigate('Auth');
   };
