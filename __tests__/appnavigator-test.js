@@ -4,12 +4,10 @@
 
 import 'react-native';
 import React from 'react';
-import App from '../src';
-import { shallow, mount } from 'enzyme';
 import AppNavigator from '../src/navigation/AppNavigator';
+import renderer from 'react-test-renderer';
 
-
-it('starts with AuthLoading screen', () => {
-  const wrapped = mount(<AppNavigator />);
-  console.log(wrapped.text());
+test('AppNavigator Snapshot Testing', () => {
+  const snap = renderer.create(<AppNavigator />).toJSON();
+  expect(snap).toMatchSnapshot();
 });
